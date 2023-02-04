@@ -47,6 +47,9 @@ const appointment = new mongoose.Schema({
   complemnt: {
     type: String,
   },
+  value:{
+    type: String,
+  }
 });
 
 const Appointment = mongoose.model("appointments", appointment);

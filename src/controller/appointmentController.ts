@@ -10,7 +10,7 @@ export class AppointmentController {
           .populate("professional")
           .populate("client")
           .populate("service");
-          
+
         res.send(appointments).status(200);
       } catch (error) {
         res.send(error).status(500);
@@ -22,7 +22,6 @@ export class AppointmentController {
       try {
         const id = req.params.id;
         const appointment = await Appointment.findById({ _id: id })
-          .populate("professionals")
 
         res.send(appointment).status(200);
       } catch (error) {
