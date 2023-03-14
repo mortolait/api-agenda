@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export interface ITypeService extends mongoose.Document {
-  name: String;
+  name: string;
 }
 
 const typeService = new mongoose.Schema({

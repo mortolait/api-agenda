@@ -1,15 +1,19 @@
 import { Request, Response } from "express";
 import Appointment from "@src/models/appointment.Schema";
+import { get } from "@src/utils/getToken";
+import { getIdClientSaas } from "@src/utils/getIdClientSaas";
 
 export class AppointmentController {
   get() {
-    console.log("get");
     return async (req: Request, res: Response) => {
+      const clientIdSaas = getIdClientSaas(req);
+
       try {
-        const appointments = await Appointment.find()
+        const appointments = await Appointment.find({ clientSaas: clientIdSaas })
           .populate("professional")
           .populate("client")
-          .populate("service");
+          .populate("service")
+
 
         res.send(appointments).status(200);
       } catch (error) {
@@ -44,12 +48,13 @@ export class AppointmentController {
   create() {
     return async (req: Request, res: Response) => {
       try {
-        console.log(req.body);
+        const clientIdSaas = getIdClientSaas(req);
 
-        const appointment = req.body;
+        const appointment = { ...req.body, clientSaas: clientIdSaas };
+
         await Appointment.create(appointment, (err: any, docs: any) => {
           if (err) {
-            res.send({ err }).status(200);
+            res.send({ err }).status(500);
           } else {
             res.send(docs).status(200);
           }

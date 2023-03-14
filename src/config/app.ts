@@ -11,6 +11,7 @@ import routerProfessional from '@src/routes/professionalRoutes'
 import routerStates from '@src/routes/statesRoutes'
 import routerAppointment from '@src/routes/appointmentController'
 import routerTypeServices from '@src/routes/typeServicesRoutes'
+import routerClientSaas from '@src/routes/clientSaasRoutes'
 
 
 class App{
@@ -30,10 +31,11 @@ class App{
         this.dataBaseSetup()
     }
     routes(){
-        this.app.use('/user',routerUser)  
-        
+        this.app.use('/clientSaas',routerClientSaas)
+        this.app.use('/users',routerUser)
+
         this.app.use(auth.validate)
-        
+
         this.app.use('/clients',routerClient)
         this.app.use('/professionals',routerProfessional)
         this.app.use('/states', routerStates)

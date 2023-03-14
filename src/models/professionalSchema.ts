@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import { IndexedAccessType } from "typescript";
 
 export interface IProfessional extends mongoose.Document {
+  clientSaas: string;
   name: string;
   cpf: string;
   cep: string | number;
@@ -21,6 +21,11 @@ export interface IProfessional extends mongoose.Document {
 }
 
 const professionalSchema = new mongoose.Schema({
+  clientSaas:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'clientSaas',
+    required: true
+  },
   name: { type: String },
   cpf: { type: String },
   cep: { type: String },
@@ -37,6 +42,6 @@ const professionalSchema = new mongoose.Schema({
   typeFunction: { type: String }
 });
 
-const Professional = mongoose.model<IProfessional>('professionals',professionalSchema)
+const Professional = mongoose.model<IProfessional>('professional',professionalSchema)
 
 export default Professional

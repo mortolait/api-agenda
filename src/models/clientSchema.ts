@@ -1,23 +1,28 @@
 import mongoose from "mongoose";
 
 export interface IClient extends mongoose.Document {
-  name: String;
-  email: String;
-  cpf: String;
-  address: String;
-  typePerson: String;
-  cep: String;
-  city: String;
-  uf: String;
-  telFone: String;
-  cellFone: String;
+  name: string;
+  email: string;
+  cpf: string;
+  address: string;
+  typePerson: string;
+  cep: string;
+  city: string;
+  uf: string;
+  telFone: string;
+  cellFone: string;
   birthDate: Date;
-  profession: String;
-  complement: String;
-  obs: String;
-  status: String
+  profession: string;
+  complement: string;
+  obs: string;
+  status: string
 }
 const clientSchema = new mongoose.Schema({
+  clientSaas:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'clientSaas',
+    required: true
+  },
   name: {
     type: String,
     require: true

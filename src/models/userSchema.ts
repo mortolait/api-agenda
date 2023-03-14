@@ -1,11 +1,15 @@
 import mongoose from "mongoose";
 
 export interface IUser extends mongoose.Document{
-    user: String,
-    password: String
+    user: string,
+    password: string
 }
 
 const userSchema = new mongoose.Schema({
+    clientSaas:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'clientSaas'
+    },
     username:{
         type: String,
     },
