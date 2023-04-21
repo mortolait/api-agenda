@@ -15,7 +15,7 @@
         },
         {
             "src":"/clientSaas/(.*)",
-            "dest":"src/routes/clientSaasRoutes.ts"
+            "dest":"src/routes/clientSaasRoutes.js"
         }
     ]
 }
