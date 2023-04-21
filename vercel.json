@@ -10,8 +10,8 @@
     ],
     "routes":[
         {
-            "src":"/dist/src/config/app.js",
-            "dest":"src/server.ts"
+            "src":"/(.*)",
+            "dest":"src/config/app.ts"
         }
     ]
 }
