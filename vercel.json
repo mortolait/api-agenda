@@ -15,7 +15,7 @@
         },
         {
             "src":"/(.*)",
-            "dest":"src/routes/appointmentController.ts"
+            "dest":"src/config/app.ts"
         }
     ]
 }
