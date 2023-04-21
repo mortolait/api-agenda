@@ -31,7 +31,7 @@ class App{
         // this.dataBaseSetup()
     }
     routes(){
-        this.app.get('/teste',(req:Request, res:Response)=>{
+        this.app.get('/testex',(req:Request, res:Response)=>{
             res.send("Hello")
         })
         //  this.app.use('/clientSaas',routerClientSaas)
