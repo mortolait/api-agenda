@@ -9,7 +9,8 @@
     "test:watch": "jest --watch",
     "start": "node --trace-warnings ./dist/src/server.js",
     "lint": "eslint ./src ./test --ext .ts",
-    "lint:fix": "eslint ./src ./test --ext .ts --fix"
+    "lint:fix": "eslint ./src ./test --ext .ts --fix",
+    "build": "npx tsc"
   },
   "keywords": [],
   "author": "",
