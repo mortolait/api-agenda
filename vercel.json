@@ -1,5 +1,7 @@
 {
+    "name":"api-agenda",
     "version":2,
+    "public":true,
     "builds": [
         {
             "src":"src/server.ts",
@@ -8,7 +10,7 @@
     ],
     "routes":[
         {
-            "src":"(.*)",
+            "src":"/(.*)",
             "dest":"src/server.ts"
         }
     ]
