@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
 
 export const connectToDb = async () => {
-  const connectionString = process.env.URL_BASE_MONGO?process.env.URL_BASE_MONGO:'';
+  const connectionString = 'mongodb+srv://contatomortola:nZuO1bHrg94ptJrJ@cluster0.82viicd.mongodb.net/linus';
   await mongoose.connect(connectionString)
     .then((res)=>{
       console.log("database connected")
