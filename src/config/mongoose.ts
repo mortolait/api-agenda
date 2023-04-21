@@ -4,9 +4,11 @@ mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
 
 export const connectToDb = async () => {
-  const connectionString = 'mongodb://root:eu2017123@hml.allto.digital:27217/agendaaqui';
+  const connectionString = 'mongodb+srv://lmortola:ana1209mortola@cluster0.wlk2qkz.mongodb.net/test';
   await mongoose.connect(connectionString)
     .then((res)=>{
+   
+     
       console.log("database connected")
     }).catch((err)=>{
       console.log("database not connected")
