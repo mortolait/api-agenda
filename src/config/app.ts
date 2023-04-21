@@ -27,8 +27,8 @@ class App{
     public init(){
         this.app.use(cors())
         this.app.use(express.json()),
-        this.app.use(express.urlencoded({ extended: true })),
-        this.dataBaseSetup()
+        this.app.use(express.urlencoded({ extended: true }))
+        // this.dataBaseSetup()
     }
     routes(){
         this.app.get('/teste',(req:Request, res:Response)=>{
