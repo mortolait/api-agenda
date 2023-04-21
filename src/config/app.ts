@@ -34,16 +34,16 @@ class App{
         this.app.get('/teste',(req:Request, res:Response)=>{
             res.send("Hello")
         })
-        this.app.use('/clientSaas',routerClientSaas)
-        this.app.use('/users',routerUser)
+        // this.app.use('/clientSaas',routerClientSaas)
+        // this.app.use('/users',routerUser)
 
         //  this.app.use(auth.validate)
 
-        this.app.use('/clients',routerClient)
-        this.app.use('/professionals',routerProfessional)
-        this.app.use('/states', routerStates)
-        this.app.use('/appointments',routerAppointment)
-        this.app.use('/typeServices',routerTypeServices)
+        // this.app.use('/clients',routerClient)
+        // this.app.use('/professionals',routerProfessional)
+        // this.app.use('/states', routerStates)
+        // this.app.use('/appointments',routerAppointment)
+        // this.app.use('/typeServices',routerTypeServices)
     }
 
     dataBaseSetup(){
