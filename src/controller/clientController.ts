@@ -7,9 +7,10 @@ import { get } from "../utils/getToken";
 export class ClientController {
   static async getClients(req: Request, res: Response) {
     try {
-      const token: any = get(req);
-      const decodedToken: any = jwt.verify(token, "linus-secret");
-      const clients = await Client.find({ clientSaas: decodedToken?.result.clientSaas });
+      // const token: any = get(req);
+      // const decodedToken: any = jwt.verify(token, "linus-secret");
+      // const clients = await Client.find({ clientSaas: decodedToken?.result.clientSaas });
+      const clients = await Client.find({});
       res.json(clients);
     } catch (error) {
       res.status(500).send(error);
