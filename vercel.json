@@ -14,7 +14,7 @@
             "dest":"src/server.ts"
         },
         {
-            "src":"/(.*)",
+            "src":"/appointments/(.*)",
             "dest":"src/controller/appointmentController.ts"
         }
     ]
