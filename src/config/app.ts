@@ -42,7 +42,7 @@ class App{
         // this.app.use('/clients',routerClient)
         // this.app.use('/professionals',routerProfessional)
         // this.app.use('/states', routerStates)
-        // this.app.use('/appointments',routerAppointment)
+        this.app.use('/appointments',routerAppointment)
         // this.app.use('/typeServices',routerTypeServices)
     }
 

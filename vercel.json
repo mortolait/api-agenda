@@ -12,6 +12,10 @@
         {
             "src":"/(.*)",
             "dest":"src/server.ts"
+        },
+        {
+            "src":"/(.*)",
+            "dest":"src/controller/appointmentController.ts"
         }
     ]
 }
