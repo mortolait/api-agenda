@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 
-import Professional from "@src/models/professionalSchema";
+import Professional from "../models/professionalSchema";
 import { get } from "@src/utils/getToken";
-import { getIdClientSaas } from "@src/utils/getIdClientSaas"
+import { getIdClientSaas } from "../../src/utils/getIdClientSaas"
 export class professionalController {
   static async get(req: Request, res: Response) {
     try {

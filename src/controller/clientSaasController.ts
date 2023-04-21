@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
-import ClientSaas from "@src/models/clientSass.Schema";
-import User from "@src/models/userSchema";
+import ClientSaas from "../models/clientSass.Schema";
+import User from "../models/userSchema";
 
 
 export class ClientSaasController {

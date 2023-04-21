@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { professionalController } from "@src/controller/professionalController";
+import { professionalController } from "../controller/professionalController";
 
 const router = Router()
 

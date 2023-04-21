@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import appointmentController from "@src/controller/appointmentController";
+import appointmentController from "../controller/appointmentController";
 
 const router = Router();
 router.get("/count",appointmentController.getCount())

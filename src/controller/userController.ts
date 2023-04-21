@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 
-import User from "@src/models/userSchema";
+import User from "../models/userSchema";
 
 export class UserController {
   static async login(req: Request, res: Response) {

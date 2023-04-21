@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import TypeService from "@src/models/typeServices.Schema";
+import TypeService from "../models/typeServices.Schema";
 
 export class TypeServicesController {
   static async get(req: Request, res: Response) {
@@ -15,7 +15,7 @@ export class TypeServicesController {
   static async create(req: Request, res: Response) {
 
     console.log(req.body)
-    let typeService = new TypeService(req.body);
+    const typeService = new TypeService(req.body);
     try {
         await TypeService.create(typeService,(err:any,docs:any)=>{
             if(err){

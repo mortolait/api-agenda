@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { TypeServicesController } from "@src/controller/typeServicesController";
+import { TypeServicesController } from "../controller/typeServicesController";
 
 const router = Router();
 

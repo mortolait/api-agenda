@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { StatesController } from '@src/controller/statesController'
+import { StatesController } from '../controller/statesController'
 
 const router = Router()
 

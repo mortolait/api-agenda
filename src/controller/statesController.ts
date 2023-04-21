@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import State from "@src/models/states.Schema";
+import State from "../models/states.Schema";
 
 export class StatesController {
 
@@ -14,7 +14,7 @@ export class StatesController {
   }
 
   static async getCities(req: Request, res: Response){
-    let sigla = req.params.sigla
+    const sigla = req.params.sigla
     try {
         const cities = await State.find({sigla:sigla},{cidades:1})
         res.send(cities).status(200)

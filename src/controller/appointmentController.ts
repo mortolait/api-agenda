@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Appointment from "@src/models/appointment.Schema";
-import { getIdClientSaas } from "@src/utils/getIdClientSaas";
+import Appointment from "../models/appointment.Schema";
+import { getIdClientSaas } from "../utils/getIdClientSaas";
 
 export class AppointmentController {
   get() {
