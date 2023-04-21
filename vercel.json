@@ -10,7 +10,7 @@
     ],
     "routes":[
         {
-            "src":"/src/config/app.ts",
+            "src":"/dist/src/config/app.js",
             "dest":"src/server.ts"
         }
     ]
