@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
-import Client from "@src/models/clientSchema";
+import Client from "../models/clientSchema";
 import { get } from "@src/utils/getToken";
 
 
