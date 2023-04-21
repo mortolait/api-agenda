@@ -12,10 +12,8 @@
         {
             "src":"/(.*)",
             "dest":"src/server.js"
-        },
-        {
-            "src":"/clientSaas/(.*)",
-            "dest":"src/routes/clientSaasRoutes.js"
         }
+        
+    
     ]
 }

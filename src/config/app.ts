@@ -34,7 +34,7 @@ class App{
         this.app.get('/teste',(req:Request, res:Response)=>{
             res.send("Hello")
         })
-         this.app.use('/clientSaas',routerClientSaas)
+        //  this.app.use('/clientSaas',routerClientSaas)
         //this.app.use('/users',routerUser)
 
         //  this.app.use(auth.validate)
