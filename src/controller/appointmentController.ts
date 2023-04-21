@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import Appointment from "@src/models/appointment.Schema";
-import { get } from "@src/utils/getToken";
 import { getIdClientSaas } from "@src/utils/getIdClientSaas";
 
 export class AppointmentController {
@@ -38,8 +37,9 @@ export class AppointmentController {
       try {
         const id = req.params.id;
         const appointment = req.body;
+        appointment.update_At = new Date();
         await Appointment.findByIdAndUpdate({ _id: id }, appointment);
-        res.send("Cadastro alterado").status(200);
+        res.send({message:"Cadastro alterado"}).status(200);
       } catch (error) {
         res.send(error).status(500);
       }
@@ -50,13 +50,13 @@ export class AppointmentController {
       try {
         const clientIdSaas = getIdClientSaas(req);
 
-        const appointment = { ...req.body, clientSaas: clientIdSaas };
+        const appointment = { ...req.body,create_At:new Date(), clientSaas: clientIdSaas };
 
         await Appointment.create(appointment, (err: any, docs: any) => {
           if (err) {
             res.send({ err }).status(500);
           } else {
-            res.send(docs).status(200);
+            res.send(docs._id).status(200);
           }
         });
       } catch (error) {
@@ -74,6 +74,19 @@ export class AppointmentController {
         res.send(error).status(500);
       }
     };
+  }
+  getCount(){
+    return async (req: Request, res: Response) => {
+      try {
+        const result = await Appointment.aggregate([
+          { $group: { _id: "count", count: { $sum: 1 }, totalValue: { $sum: "$value" } } }
+        ]).exec();
+        
+        res.send({result}).status(200)
+      } catch (error) {
+        res.send(500)
+      }
+    }
   }
 }
 

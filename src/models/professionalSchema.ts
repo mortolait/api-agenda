@@ -11,7 +11,7 @@ export interface IProfessional extends mongoose.Document {
   district: string;
   number: number;
   complement: string;
-  profession: string;
+  position: string;
   telFone: string | number;
   cellFone: string | number;
   email: string;
@@ -39,7 +39,9 @@ const professionalSchema = new mongoose.Schema({
   cellFone: { type: String },
   email: { type: String },
   birthDate: { type: Date },
-  typeFunction: { type: String }
+  typeFunction: { type: String },
+  function: { type: String },
+  obs: { type: String },
 });
 
 const Professional = mongoose.model<IProfessional>('professional',professionalSchema)

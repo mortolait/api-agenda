@@ -32,8 +32,8 @@ export class ClientController {
     const newClient = { ...req.body, clientSaas: decodedToken?.result.clientSaas };
 
     try {
-      await Client.create(newClient);
-      res.send(newClient).status(200);
+     const createdClient = await Client.create(newClient);
+      res.send(createdClient._id).status(200);
     } catch (error) {
       res.status(500);
     }

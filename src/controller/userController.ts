@@ -6,7 +6,8 @@ import User from "@src/models/userSchema";
 export class UserController {
   static async login(req: Request, res: Response) {
     const { user, password } = req.body;
-    const result = await User.findOne({ user, password });
+    console.log(user, password);
+    const result = await User.findOne({ username:user, password });
     if (result) {
       const token = jwt.sign({ result }, "linus-secret", {
         expiresIn: "24h",

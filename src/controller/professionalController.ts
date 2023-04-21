@@ -29,7 +29,7 @@ export class professionalController {
       const id = req.params.id
       const professional = req.body
       await Professional.findByIdAndUpdate({ _id: id }, professional)
-      res.send("Cadastro alterado").status(200)
+      res.send({message:'Cadastro alterado'}).status(200)
     } catch (error) {
       res.send(error).status(500)
     }
@@ -38,18 +38,14 @@ export class professionalController {
   static async create(req: Request, res: Response) {
     try {
       const idClientSaas = await getIdClientSaas(req);
-      console.log({idClientSaas});
       const professional = { ...req.body, clientSaas: idClientSaas };
-
-      console.log({teste:professional});
-
-      await Professional.create(professional, (err: any, docs: any) => {
-        if (err) {
-          res.send({ err }).status(500);
-        } else {
-          res.send(docs).status(200);
-        }
-      });
+      console.log({professional})
+      try {
+        const createdProfessional = await Professional.create(professional);
+         res.send(createdProfessional._id).status(200);
+       } catch (error) {
+         res.status(500);
+       }
 
     } catch (error) {
       res.send(error).status(500);

@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 const appointment = new mongoose.Schema({
@@ -54,8 +55,17 @@ const appointment = new mongoose.Schema({
   },
   value:{
     type: String,
-  }
+  },
+  create_At:{
+    type: Date,
+  },
+  update_At:{
+    type: Date,
+  },
 });
+
+
+
 
 const Appointment = mongoose.model("appointment", appointment);
 
