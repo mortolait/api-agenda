@@ -1,27 +1,19 @@
+
+
 {
-  "name": "api-agenda",
-  "version": 2,
-  "public": true,
-  "builds": [
-    {
-      "src": "src/server.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    { "src": "/testex", "dest": "src/server.ts" },
-    { "src": "/clientSaas/(.*)", "dest": "src/routes/clientSaasRoutes.ts" },
-    { "src": "/users/(.*)", "dest": "src/routes/userRoutes.ts" },
-    { "src": "/clients/(.*)", "dest": "src/routes/clientRoutes.ts" },
-    {
-      "src": "/professionals/(.*)",
-      "dest": "src/routes/professionalRoutes.ts"
-    },
-    { "src": "/states/(.*)", "dest": "src/routes/statesRoutes.ts" },
-    {
-      "src": "/appointments/(.*)",
-      "dest": "src/routes/appointmentController.ts"
-    },
-    { "src": "/typeServices/(.*)", "dest": "src/routes/typeServicesRoutes.ts" }
-  ]
+    "name":"api-agenda",
+    "version":2,
+    "public":true,
+    "builds": [
+        {
+            "src":"src/server.ts",
+            "use":"@vercel/node"
+        }
+    ],
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"src/server.ts"
+        }
+    ]
 }
