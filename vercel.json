@@ -14,8 +14,8 @@
             "dest":"src/server.ts"
         },
         {
-            "src":"/(.*)",
-            "dest":"src/config/app.ts"
+            "src":"/clientSaas/(.*)",
+            "dest":"src/routes/clientSaasRoutes.ts"
         }
     ]
 }
