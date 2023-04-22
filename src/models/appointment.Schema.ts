@@ -54,7 +54,7 @@ const appointment = new mongoose.Schema({
     type: String,
   },
   value:{
-    type: String,
+    type: Number,
   },
   create_At:{
     type: Date,
